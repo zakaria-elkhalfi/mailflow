@@ -100,15 +100,15 @@ SMTP_PASS=your_mailgun_smtp_password
 ## 📁 Project Structure
 
 ```
-email-automation/
-├── src/
-│   └── server.js        # Express backend + all API routes
-├── public/
-│   └── index.html       # Frontend dashboard (single file)
-├── .env.example         # Environment variable template
-├── .env                 # Your credentials (NEVER commit this)
-├── package.json
-└── README.md
+mailflow 22/
+├
+│ server.js        # Express backend + all API routes
+├ 
+│  index.html       # Frontend dashboard (single file)
+├.env.example         # Environment variable template
+├.env                 # Your credentials (NEVER commit this)
+├package.json
+ README.md
 ```
 
 ---
