@@ -15,8 +15,11 @@ const app = express();
 const upload = multer({ storage: multer.memoryStorage() });
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "./")));
-
+app.use(express.static(__dirname));
+// Serve index.html for root
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "index.html"));
+});
 // ─── Auth Config ──────────────────────────────────────────────────────────────
 const JWT_SECRET = process.env.JWT_SECRET || "mailflow-secret-2024";
 const ADMIN_USER = process.env.ADMIN_USER || "admin";
