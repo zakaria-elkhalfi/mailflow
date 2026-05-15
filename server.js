@@ -17,8 +17,9 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(__dirname));
 // Serve index.html for root
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../app"));
+app.use(express.static('/app'));
+app.get('*', (req, res) => {
+  res.sendFile('/app/index.html');
 });
 // ─── Auth Config ──────────────────────────────────────────────────────────────
 const JWT_SECRET = process.env.JWT_SECRET || "mailflow-secret-2024";
